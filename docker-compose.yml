@@ -1,0 +1,15 @@
+version: "3.7"
+
+services: 
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2019-CU3-ubuntu-18.04
+    user: '0:0'
+    ports:
+      - 1433:1433
+    container_name: sqlserver2019
+    environment:
+      ACCEPT_EULA: Y
+      MSSQL_SA_PASSWORD: P#ruN3TDevelopment
+      MSSQL_PID: Developer
+    volumes:
+      - ~/docker/sqlserver-data:/var/opt/mssql
